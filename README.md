@@ -46,7 +46,7 @@ D(x_3,x_1) & D(x_3,x_2) & 0 & \cdots & D(x_3,x_k) \\
 D(x_k,x_1) & D(x_k,x_2) & D(x_k,x_3) & \cdots & 0
 \end{matrix}\right]$$
 
-In the event that two data points, namely $x_1$ and $x_2$, demonstrate a high level of similarity, where $D(x_1,x_2)<tolerance$, it is possible to combine the two points into a singular point. The parent point, denoted as $x^*_{(1,2)}$, will be situated at the midpoint between the two original nodes.
+In the event that two data points, namely $x_1$ and $x_2$, demonstrate a high level of similarity, where $D(x_1,x_2)\leq\text{tolerance}$, it is possible to combine the two points into a singular point. The parent point, denoted as $x^*_{(1,2)}$, will be situated at the midpoint between the two original nodes.
 
 $$D(x_1,x^*)=D(x^*,x_2)=\frac{1}{2}D(x_1,x_2)$$
 
