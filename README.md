@@ -54,7 +54,7 @@ And thus the clustering tree is finally obtained by continuous merging.
 
 ### Deep Learning Model
 
-聚类后的子集往往在欧式空间呈现团簇式分布。训练集中被标记为信用卡诈骗交易的点$\vec{p_i}=(p^i_1,p^i_2,cdots,p^i_n)$有两种分布情况。
+聚类后的子集往往在欧式空间呈现团簇式分布。训练集中被标记为信用卡诈骗交易的点 $\vec{p_i}=(p^i_1,p^i_2,cdots,p^i_n)$ 有两种分布情况。
 * Category I: 在测度空间上远离成簇的子集合，为离散在空间中单独的点。
 * Category II: 在测度空间中靠近成簇的子集和。
 因此将利用两种不同的深度学习算法来分离出标记为信用卡诈骗的点。
