@@ -27,9 +27,9 @@ Due to the low occurrence of credit card skimming instances within the dataset, 
 ### Hierarchical Clustering Model
 
 If the user's payment behavior is visualized as an $n$-dimensional vector space $X\in\mathbb{R}^n$, the user's transaction data such as transaction time, location, amount, etc. can be represented as a point in the vector space i.e.
-$$
-\vec{x}=(x_1,x_2,\cdots,x_n)\in\mathbf{H}\subseteq X
-$$
+
+$$\vec{x}=(x_1,x_2,\cdots,x_n)\in\mathbf{H}\subseteq X$$
+
 The daily transaction patterns of users, including activities such as grocery shopping, dining at local restaurants, and online shopping on popular websites, often exhibit clear repetition. This results in the projection of these consumption behaviors onto a vector space that is densely populated with numerous data points. In order to effectively process this data, **Hierarchical Clustering** is utilized, which involves measuring the similarity between data points and combining them to form a clustering tree based on their proximity. By examining the training data within the sub-tree that contains the stolen records, underfitting can be avoided by training the entire dataset directly.
 
 Hierarchical clustering calculates the similarity in terms of the Euclidean distance in vector space. For any two points $\vec x_i$, $\vec y_i$ in vector space, their distance can be expressed as
