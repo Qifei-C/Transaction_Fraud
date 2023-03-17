@@ -59,7 +59,11 @@ After clustering, subsets often show a cluster-like distribution in Euclidean sp
 * Category I: These points are discrete and separate from the clustered subset in the metric space.
 * Category II: These points are close to the clustered subset in the metric space.
 
-Under normal circumstances, fraudulent transactions have significant characteristics that should be far away from most of the normal transaction data in vector space. Since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
+Under normal circumstances, fraudulent transactions have significant characteristics that should be far away from most of the normal transaction data in vector space. 
+
+![Alt text](https://pic4.zhimg.com/v2-c354904311f72d79fd4949aaaf24980f_r.jpg "optional title")
+
+Since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
 
 Considering a training set of linearly separable data in the following form:
 
