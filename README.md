@@ -67,11 +67,11 @@ For the first case, since the points labeled as credit card fraud are far away f
 
 $$\{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)\}:=\mathbb{H}_i(x,y)$$
 
-其中 $x_i$ 是一个含有 $d$ 个元素的列向量，即 $x_i\in\mathbf{H}\subseteq\mathbb{R}^d$. $y_i\in\{-1,+1\}$为标量，标记数据 $x_i$ 是否为诈骗交易。$y_i=1$ 时表示 $x_i$ 属于正常交易，$y_i=-1$ 时表示 $x_i$ 为诈骗交易。我们希望分割这些点的超平面 $W$ 使得平面对于两种不同数据间的距离尽可能大，使用平行直线公式发现对于超平面 $\langle x\cdot W \rangle + b = 0$
+$x_i$ is a column vector with $d$ elements, i.e., $x_i\in\mathbf{H}\subseteq\mathbb{R}^d$. $y_i\in{-1,+1}$ is a scalar that indicates whether the data point $x_i$ is a fraudulent transaction. When $y_i=1$, $x_i$ is a normal transaction, and when $y_i=-1$, $x_i$ is a fraudulent transaction. We want to separate these points with a hyperplane $W$ in such a way that the distance between the hyperplane and the two types of data is maximized. Using the equation for a parallel line, we find that for a hyperplane, $\langle x\cdot W \rangle + b = 0$.
 
 $$margin=\rho=\frac{2}{||W||}$$
 
-以及
+and
 
 $$\max\limits_{W,b}\rho\Leftrightarrow\max\limits_{W,b}\rho^2\Leftrightarrow\min\limits_{W,b}\frac{1}{2}||W||^2$$
 
