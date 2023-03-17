@@ -54,10 +54,11 @@ And thus the clustering tree is finally obtained by continuous merging.
 
 ### Deep Learning Model
 
-聚类后的子集往往在欧式空间呈现团簇式分布。训练集中被标记为信用卡诈骗交易的点 $\vec{p_i}=(p^i_1,p^i_2,\cdots,p^i_n)$ 有两种分布情况。
-* Category I: 在测度空间上远离成簇的子集合，为离散在空间中单独的点。
-* Category II: 在测度空间中靠近成簇的子集和。
-因此将利用两种不同的深度学习算法来分离出标记为信用卡诈骗的点。
+After clustering, subsets often show a cluster-like distribution in Euclidean space. There are two distribution patterns for the points labeled as credit card fraud transactions in the training set, denoted by $\vec{p_i}=(p^i_1,p^i_2,\cdots,p^i_n)$:
 
-对于第一种情况，由于被标记为信用卡诈骗的点远离代表正常交易的点。因此在聚类过程中，这些点和正常交易的点在不同的子树上。可以从第 $n$ 层聚类树干截断，将 $n+1$ 层后的子集 $\mathbf{H}_i\subseteq\mathbf{H}$ 中代表正常交易的点，通过欧式几何求得在向量空间中的平均坐标 $x^\*$ 作为新的训练集中的点。对于这部分数据可以采用SVN模型进行分类。
+Category I: These points are discrete and separate from the clustered subset in the metric space.
+Category II: These points are close to the clustered subset in the metric space.
+Therefore, two different deep learning algorithms will be used to separate the points labeled as credit card fraud.
+
+For the first case, since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
 
