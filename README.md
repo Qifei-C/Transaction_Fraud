@@ -33,23 +33,17 @@ $$
 The daily transaction patterns of users, including activities such as grocery shopping, dining at local restaurants, and online shopping on popular websites, often exhibit clear repetition. This results in the projection of these consumption behaviors onto a vector space that is densely populated with numerous data points. In order to effectively process this data, **Hierarchical Clustering** is utilized, which involves measuring the similarity between data points and combining them to form a clustering tree based on their proximity. By examining the training data within the sub-tree that contains the stolen records, underfitting can be avoided by training the entire dataset directly.
 
 Hierarchical clustering calculates the similarity in terms of the Euclidean distance in vector space. For any two points $\vec x_i$, $\vec y_i$ in vector space, their distance can be expressed as
-$$
-D(x_i,y_i)=||x_i-y_i||_2=\sqrt{(x^i_1-y^i_1)^2+(x^i_2-y^i_2)^2+\cdots+(x^i_n-y^i_n)^2}
-$$
+$$D(x_i,y_i)=||x_i-y_i||_2=\sqrt{(x^i_1-y^i_1)^2+(x^i_2-y^i_2)^2+\cdots+(x^i_n-y^i_n)^2}$$
 For a data set with $k$ observations, a $k\times k$ matrices is employed to calculate the distance values separately
-$$
-\left[\begin{matrix}
+$$\left[\begin{matrix}
 0 & D(x_1,x_2) & D(x_1,x_3) & \cdots & D(x_1,x_k) \\
 D(x_2,x_2) & 0 & D(x_2,x_3) & \cdots & D(x_2,x_k) \\
 D(x_3,x_1) & D(x_3,x_2) & 0 & \cdots & D(x_3,x_k) \\
 \vdots &\vdots & \vdots &\ddots & \vdots \\
 D(x_k,x_1) & D(x_k,x_2) & D(x_k,x_3) & \cdots & 0
-\end{matrix}\right]
-$$
+\end{matrix}\right]$$
 In the event that two data points, namely $x_1$ and $x_2$, demonstrate a high level of similarity, where $D(x_1,x_2)<tolerance$, it is possible to combine the two points into a singular point. The parent point, denoted as $x^*_{(1,2)}$, will be situated at the midpoint between the two original nodes.
-$$
-D(x_1,x^*)=D(x^*,x_2)=\frac{1}{2}D(x_1,x_2)
-$$
+$$D(x_1,x^*)=D(x^*,x_2)=\frac{1}{2}D(x_1,x_2)$$
 And thus the clustering tree is finally obtained by continuous merging.
 
 ### Deep Learning Model
