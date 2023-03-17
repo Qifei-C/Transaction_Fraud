@@ -73,7 +73,7 @@ $$margin=\rho=\frac{2}{||W||}$$
 
 以及
 
-$$\max\limits_{W,b}\rho\Leftrightarrow\max\limits_{W,b}\rho^2\Leftrightarrow\min\limits_{W,b}\frac{1}{2}||W||^2
+$$\max\limits_{W,b}\rho\Leftrightarrow\max\limits_{W,b}\rho^2\Leftrightarrow\min\limits_{W,b}\frac{1}{2}||W||^2$$
 
-$$\max\limits_{W,b}
+$$\max\limits_{W,b}$$
 
