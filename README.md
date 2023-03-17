@@ -59,11 +59,9 @@ After clustering, subsets often show a cluster-like distribution in Euclidean sp
 * Category I: These points are discrete and separate from the clustered subset in the metric space.
 * Category II: These points are close to the clustered subset in the metric space.
 
-Therefore, two different deep learning algorithms will be used to separate the points labeled as credit card fraud.
+Under normal circumstances, fraudulent transactions have significant characteristics that should be far away from most of the normal transaction data in vector space. Since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
 
-For the first case, since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
-
-考虑到如下形式的线性可分数据训练集：
+Considering a training set of linearly separable data in the following form:
 
 $$\{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)\}:=\mathbb{H}_i(x,y)$$
 
@@ -75,5 +73,5 @@ and
 
 $$\max\limits_{W,b}\rho\Leftrightarrow\max\limits_{W,b}\rho^2\Leftrightarrow\min\limits_{W,b}\frac{1}{2}||W||^2$$
 
-$$\max\limits_{W,b}$$
+
 
