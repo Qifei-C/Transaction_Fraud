@@ -56,9 +56,24 @@ And thus the clustering tree is finally obtained by continuous merging.
 
 After clustering, subsets often show a cluster-like distribution in Euclidean space. There are two distribution patterns for the points labeled as credit card fraud transactions in the training set, denoted by $\vec{p_i}=(p^i_1,p^i_2,\cdots,p^i_n)$:
 
-Category I: These points are discrete and separate from the clustered subset in the metric space.
-Category II: These points are close to the clustered subset in the metric space.
+* Category I: These points are discrete and separate from the clustered subset in the metric space.
+* Category II: These points are close to the clustered subset in the metric space.
+
 Therefore, two different deep learning algorithms will be used to separate the points labeled as credit card fraud.
 
 For the first case, since the points labeled as credit card fraud are far away from the points representing normal transactions, during the clustering process, these points are assigned to a different subtree than the normal transaction points. We can cut the clustering tree at the $n$-th level and take the subsets $\mathbf{H}_i\subseteq\mathbf{H}$ from the $n+1$-th level, which represent the normal transactions. Then we can calculate the average coordinates $x^\*$ of these normal transactions in the vector space using Euclidean geometry, and use them as the new points in the training set. For this new dataset, a linearly separable SVM model can be used for classification.
+
+考虑到如下形式的线性可分数据训练集：
+
+$$\{(x_1,y_1),(x_2,y_2),\cdots,(x_n,y_n)\}:=\mathbb{H}_i(x,y)$$
+
+其中 $x_i$ 是一个含有 $d$ 个元素的列向量，即 $x_i\in\mathbf{H}\subseteq\mathbb{R}^d$. $y_i\in\{-1,+1\}$为标量，标记数据 $x_i$ 是否为诈骗交易。$y_i=1$ 时表示 $x_i$ 属于正常交易，$y_i=-1$ 时表示 $x_i$ 为诈骗交易。我们希望分割这些点的超平面 $W$ 使得平面对于两种不同数据间的距离尽可能大，使用平行直线公式发现对于超平面 $\langle x\cdot W \rangle + b = 0$
+
+$$margin=\rho=\frac{2}{||W||}$$
+
+以及
+
+$$\max\limits_{W,b}\rho\Leftrightarrow\max\limits_{W,b}\rho^2\Leftrightarrow\min\limits_{W,b}\frac{1}{2}||W||^2
+
+$$\max\limits_{W,b}
 
